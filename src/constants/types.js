@@ -1,2 +1,5 @@
-export const LOAD_DATA = 'LOAD_DATA'
+export const LOAD_DATA_REQUEST = 'LOAD_DATA_REQUEST'
+export const LOAD_DATA_RECEIVE = 'LOAD_DATA_RECEIVE'
+export const LOAD_DATA_FAILURE = 'LOAD_DATA_FAILURE'
+
 export const ADD_DATA = 'ADD_DATA'

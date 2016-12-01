@@ -1,15 +1,19 @@
-import { LOAD_DATA, ADD_DATA } from '../constants/types'
+import { LOAD_DATA_REQUEST, LOAD_DATA_RECEIVE, LOAD_DATA_FAILURE, ADD_DATA } from '../constants/types'
+import { CALL_API } from 'redux-api-middleware'
 
-const data = [
-    {id: 1, title: 'React'},
-    {id: 2, title: 'Redux'}
-]
-
+// Load 100 example posts from a test API
 export function loadData() {
-    return {
-        type: LOAD_DATA,
-        data
+  return {
+    [CALL_API]: {
+      endpoint: 'https://jsonplaceholder.typicode.com/posts',
+      method: 'GET',
+      types: [
+        LOAD_DATA_REQUEST,
+        LOAD_DATA_RECEIVE,
+        LOAD_DATA_FAILURE
+      ]
     }
+  }
 }
 
 export function addData(value) {
